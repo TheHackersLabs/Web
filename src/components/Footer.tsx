@@ -2,6 +2,7 @@ import React from 'react';
 import { Terminal, Twitter, Github, Linkedin, Mail, Globe, Instagram } from 'lucide-react';
 import { FaDiscord, FaTelegram, FaYoutube } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
   const { t } = useTranslation();
@@ -82,8 +83,8 @@ const Footer: React.FC = () => {
             &copy; {new Date().getFullYear()} The Hackers Labs. {t('footer.rights')}
           </p>
           <div className="mt-4 md:mt-0 flex space-x-6">
-            <a href="/privacy-policy" className="text-gray-500 hover:text-[#ff6900] transition-colors duration-200 text-sm">{t('footer.legal.privacy')}</a>
-            <a href="/terms-of-service" className="text-gray-500 hover:text-[#ff6900] transition-colors duration-200 text-sm">{t('footer.legal.terms')}</a>
+            <Link to="/privacy-policy" className="text-gray-500 hover:text-[#ff6900] transition-colors duration-200 text-sm">{t('footer.legal.privacy')}</Link>
+            <Link to="/terms-of-service" className="text-gray-500 hover:text-[#ff6900] transition-colors duration-200 text-sm">{t('footer.legal.terms')}</Link>
             <a href="#" className="text-gray-500 hover:text-[#ff6900] transition-colors duration-200 text-sm">{t('footer.legal.cookies')}</a>
           </div>
         </div>
