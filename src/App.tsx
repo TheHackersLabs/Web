@@ -13,6 +13,7 @@ import BlogSection from './components/BlogSection';
 import NewsletterSection from './components/NewsletterSection';
 import Footer from './components/Footer';
 import FloatingButton from './components/FloatingButton';
+import PrivacyPolicy from './components/PrivacyPolicy';
 import './utils/animations.css';
 
 function App() {
@@ -30,6 +31,19 @@ function App() {
       document.getElementsByTagName('head')[0].removeChild(meta);
     };
   }, [t]);
+
+  // Check if we're on the privacy policy page
+  const isPrivacyPolicy = window.location.pathname === '/privacy-policy';
+
+  if (isPrivacyPolicy) {
+    return (
+      <div className="bg-black text-white min-h-screen">
+        <Navbar />
+        <PrivacyPolicy />
+        <Footer />
+      </div>
+    );
+  }
 
   return (
     <div className="bg-black text-white min-h-screen">
