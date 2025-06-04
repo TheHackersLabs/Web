@@ -14,6 +14,7 @@ import NewsletterSection from './components/NewsletterSection';
 import Footer from './components/Footer';
 import FloatingButton from './components/FloatingButton';
 import PrivacyPolicy from './components/PrivacyPolicy';
+import TermsOfService from './components/TermsOfService';
 import './utils/animations.css';
 
 function App() {
@@ -32,14 +33,26 @@ function App() {
     };
   }, [t]);
 
-  // Check if we're on the privacy policy page
-  const isPrivacyPolicy = window.location.pathname === '/privacy-policy';
+  // Check if we're on the privacy policy or terms of service page
+  const currentPath = window.location.pathname;
+  const isPrivacyPolicy = currentPath === '/privacy-policy';
+  const isTermsOfService = currentPath === '/terms-of-service';
 
   if (isPrivacyPolicy) {
     return (
       <div className="bg-black text-white min-h-screen">
         <Navbar />
         <PrivacyPolicy />
+        <Footer />
+      </div>
+    );
+  }
+
+  if (isTermsOfService) {
+    return (
+      <div className="bg-black text-white min-h-screen">
+        <Navbar />
+        <TermsOfService />
         <Footer />
       </div>
     );

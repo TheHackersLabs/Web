@@ -21,7 +21,6 @@ const Footer: React.FC = () => {
               {t('footer.description')}
             </p>
             <div className="mt-6 flex space-x-4">
- 
               <a href="https://x.com/thehackerslabs?s=21" className="text-gray-400 hover:text-[#1DA1F2] transition-colors duration-200 transform hover:scale-110">
                 <Twitter className="h-6 w-6" />
               </a>
@@ -49,9 +48,13 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-white font-semibold mb-4">{t('footer.training.title')}</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-400 hover:text-[#ff6900] transition-colors duration-200 text-sm">{t('footer.training.challenges')}</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-[#ff6900] transition-colors duration-200 text-sm">{t('footer.training.competitions')}</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-[#ff6900] transition-colors duration-200 text-sm">{t('footer.training.workshops')}</a></li>
+              <li><a href="https://labs.thehackerslabs.com/offensive" className="text-gray-400 hover:text-[#ff6900] transition-colors duration-200 text-sm">Seguridad Ofensiva</a></li>
+              <li><a href="https://labs.thehackerslabs.com/defensive" className="text-gray-400 hover:text-[#ff6900] transition-colors duration-200 text-sm">Seguridad Defensiva</a></li>
+              <li><a href="https://labs.thehackerslabs.com/osint" className="text-gray-400 hover:text-[#ff6900] transition-colors duration-200 text-sm">OSINT e Inteligencia</a></li>
+              <li><a href="https://labs.thehackerslabs.com/reversing" className="text-gray-400 hover:text-[#ff6900] transition-colors duration-200 text-sm">Ingeniería Inversa</a></li>
+              <li><a href="https://labs.thehackerslabs.com/android" className="text-gray-400 hover:text-[#ff6900] transition-colors duration-200 text-sm">Seguridad en Android</a></li>
+              <li><a href="https://labs.thehackerslabs.com/ad" className="text-gray-400 hover:text-[#ff6900] transition-colors duration-200 text-sm">Active Directory</a></li>
+              <li><a href="https://labs.thehackerslabs.com/wirelless" className="text-gray-400 hover:text-[#ff6900] transition-colors duration-200 text-sm">Seguridad en redes</a></li>
             </ul>
           </div>
           
@@ -79,8 +82,8 @@ const Footer: React.FC = () => {
             &copy; {new Date().getFullYear()} The Hackers Labs. {t('footer.rights')}
           </p>
           <div className="mt-4 md:mt-0 flex space-x-6">
-            <a href="#" className="text-gray-500 hover:text-[#ff6900] transition-colors duration-200 text-sm">{t('footer.legal.privacy')}</a>
-            <a href="#" className="text-gray-500 hover:text-[#ff6900] transition-colors duration-200 text-sm">{t('footer.legal.terms')}</a>
+            <a href="/privacy-policy" className="text-gray-500 hover:text-[#ff6900] transition-colors duration-200 text-sm">{t('footer.legal.privacy')}</a>
+            <a href="/terms-of-service" className="text-gray-500 hover:text-[#ff6900] transition-colors duration-200 text-sm">{t('footer.legal.terms')}</a>
             <a href="#" className="text-gray-500 hover:text-[#ff6900] transition-colors duration-200 text-sm">{t('footer.legal.cookies')}</a>
           </div>
         </div>
