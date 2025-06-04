@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import TrainingCategories from './components/TrainingCategories';
@@ -17,6 +18,23 @@ import PrivacyPolicy from './components/PrivacyPolicy';
 import TermsOfService from './components/TermsOfService';
 import './utils/animations.css';
 
+const HomePage = () => {
+  return (
+    <>
+      <Hero />
+      <TrainingCategories />
+      <TrainingSection />
+      <EnterpriseSection />
+      <ProductsSection />
+      <CTFSection />
+      <FeaturedChallenges />
+      <BlogSection />
+      <TeamSection />
+      <NewsletterSection />
+    </>
+  );
+};
+
 function App() {
   const { t } = useTranslation();
 
@@ -33,47 +51,19 @@ function App() {
     };
   }, [t]);
 
-  // Check if we're on the privacy policy or terms of service page
-  const currentPath = window.location.pathname;
-  const isPrivacyPolicy = currentPath === '/privacy-policy';
-  const isTermsOfService = currentPath === '/terms-of-service';
-
-  if (isPrivacyPolicy) {
-    return (
-      <div className="bg-black text-white min-h-screen">
-        <Navbar />
-        <PrivacyPolicy />
-        <Footer />
-      </div>
-    );
-  }
-
-  if (isTermsOfService) {
-    return (
-      <div className="bg-black text-white min-h-screen">
-        <Navbar />
-        <TermsOfService />
-        <Footer />
-      </div>
-    );
-  }
-
   return (
-    <div className="bg-black text-white min-h-screen">
-      <Navbar />
-      <Hero />
-      <TrainingCategories />
-      <TrainingSection />
-      <EnterpriseSection />
-      <ProductsSection />
-      <CTFSection />
-      <FeaturedChallenges />
-      <BlogSection />
-      <TeamSection />
-      <NewsletterSection />
-      <Footer />
-      <FloatingButton />
-    </div>
+    <Router>
+      <div className="bg-black text-white min-h-screen">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-service" element={<TermsOfService />} />
+        </Routes>
+        <Footer />
+        <FloatingButton />
+      </div>
+    </Router>
   );
 }
 
